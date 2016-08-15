@@ -3,7 +3,7 @@
 require_once 'config.php';
 
 $callPaysonApi = new  PaysonEmbedded\PaysonApi($merchantId, $apiKey, $environment);
-$paysonMerchant = new  PaysonEmbedded\Merchant($checkoutUri, $confirmationUri, $notificationUri, $termsUri, 1);
+$paysonMerchant = new  PaysonEmbedded\Merchant($checkoutUri, $confirmationUri, $notificationUri, $termsUri);
 $payData = new  PaysonEmbedded\PayData(PaysonEmbedded\CurrencyCode::SEK);
 $payData->AddOrderItem(new  PaysonEmbedded\OrderItem('Test product', 500, 1, 0.25, 'MD0'));
 

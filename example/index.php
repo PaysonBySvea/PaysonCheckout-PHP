@@ -7,7 +7,7 @@ require_once 'config.php';
  */
 
 $callPaysonApi = new  PaysonEmbedded\PaysonApi($merchantId, $apiKey, $environment);
-$paysonMerchant = new  PaysonEmbedded\Merchant($checkoutUri, $confirmationUri, $notificationUri, $termsUri, 1);
+$paysonMerchant = new  PaysonEmbedded\Merchant($checkoutUri, $confirmationUri, $notificationUri, $termsUri);
 //$paysonMerchant->reference = '121212';
 
 $payData = new  PaysonEmbedded\PayData(PaysonEmbedded\CurrencyCode::SEK);
