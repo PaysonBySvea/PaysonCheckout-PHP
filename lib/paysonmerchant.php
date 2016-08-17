@@ -13,7 +13,7 @@ namespace PaysonEmbedded {
         public $termsUri;
         /** @var string $reference Merchants own reference of the checkout.*/
         public $reference = NULL;
-        /** @var int $partnerId Partners unique identifier */
+        /** @var string $partnerId Partners unique identifier */
         public $partnerId = NULL;
         /** @var string $integrationInfo Information about the integration. */
         public $integrationInfo = NULL;
