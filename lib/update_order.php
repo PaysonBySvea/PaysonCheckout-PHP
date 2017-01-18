@@ -9,7 +9,7 @@ $payData->AddOrderItem(new  PaysonEmbedded\OrderItem('Test product', 500, 1, 0.2
 
 
 $customer = new  PaysonEmbedded\Customer('firstName', 'lastName', 'email', 'phone', 'identityNumber', 'city', 'country', '99999', 'street');
-$gui = new  PaysonEmbedded\Gui('sv', 'gray', 'none', 0);
+$gui = new  PaysonEmbedded\Gui('sv', 'gray', 'none', 0 /*, ['SE', 'GB']*/);
 $checkout = new  PaysonEmbedded\Checkout($paysonMerchant, $payData, $gui,$customer);
 
 // Update the purchase with the checkoutID.
