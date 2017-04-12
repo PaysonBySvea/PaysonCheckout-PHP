@@ -11,17 +11,20 @@ namespace PaysonEmbedded{
         public $requestPhone;
         /** @var list $countries  List of countries shown in the checkout snippet. */
         public $countries = array();
+        /** @var bool $phoneOptional  Can be used to ask the user to fill in his phone number, but not strict required. */
+        public $phoneOptional;
         
-        public function __construct($locale = "sv", $colorScheme = "gray", $verfication = "none", $requestPhone = NULL, $countries = Null){
+        public function __construct($locale = "sv", $colorScheme = "gray", $verfication = "none", $requestPhone = NULL, $countries = NULL, $phoneOptional = NULL){
             $this->colorScheme = $colorScheme;
             $this->locale = $locale; 
             $this->verfication = $verfication;
             $this->requestPhone = $requestPhone;
             $this->countries = $countries;
+            $this->phoneOptional = $phoneOptional;
         }
 
         public static function create($data) {
-            return new Gui($data->locale, $data->colorScheme, $data->verification, $data->requestPhone, $data->countries);
+            return new Gui($data->locale, $data->colorScheme, $data->verification, $data->requestPhone, $data->countries, $data->phoneOptional);
         }
         
         public function toArray(){

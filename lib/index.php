@@ -15,7 +15,7 @@ $payData->AddOrderItem(new  PaysonEmbedded\OrderItem('Test product', 500, 1, 0.2
 $payData->AddOrderItem(new  PaysonEmbedded\OrderItem('discount', -20, 1, 0.1, 'a',PaysonEmbedded\OrderItemType::DISCOUNT));
 
 
-$gui = new  PaysonEmbedded\Gui('sv', 'gray', 'none', 0 /*, ['SE', 'GB']*/);
+$gui = new  PaysonEmbedded\Gui('sv', 'gray', 'none', 0, /*, ['SE', 'GB']*/ NULL, 1);
 $customer = new  PaysonEmbedded\Customer('Firstname', 'Lastname', 'test@test.com', 'Phone', '4605092222', 'City', 'Country', '99999', 'Street');
 $checkout = new  PaysonEmbedded\Checkout($paysonMerchant, $payData, $gui,$customer); 
 
