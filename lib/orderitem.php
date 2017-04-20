@@ -5,7 +5,8 @@ namespace PaysonEmbedded{
     {
         const PHYSICAL = 'physical';
         const DISCOUNT = 'discount';
-        const SERVICE = 'service';
+        const SERVICE  = 'service';
+        const FEE      = 'fee';
     }
     
     class OrderItem {
