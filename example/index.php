@@ -23,16 +23,10 @@ $checkout = new  PaysonEmbedded\Checkout($paysonMerchant, $payData, $gui,$custom
  * Step 2 Create checkout
  */
 
-$checkoutId = $callPaysonApi->CreateCheckout($checkout);
+$checkout = $callPaysonApi->CreateGetCheckout($checkout);
 
 /*
- * Step 3 Get checkout object
- */
-
-$checkout = $callPaysonApi->GetCheckout($checkoutId);
-
-/*
- * Step 4 Print out checkout html
+ * Step 3 Print out checkout html
  */
 
 print '<h1 style="text-align:center"> CheckoutId:'.$checkout->id.'</h1>';
