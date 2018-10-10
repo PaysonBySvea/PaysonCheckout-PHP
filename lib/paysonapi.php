@@ -14,7 +14,8 @@ namespace PaysonEmbedded {
 namespace PaysonEmbedded {
 
     class PaysonApi {
-
+        /**  API version 1.0.1 */
+        
         private $merchantId;
         private $apiKey;
         private $protocol = "https://%s";

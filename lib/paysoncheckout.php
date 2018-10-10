@@ -27,14 +27,18 @@ namespace PaysonEmbedded {
         
         /** @var string $description */
         public $description;
+        
+        /** @var string $expirationTime */
+        public $expirationTime;
        
-        public function __construct(Merchant $merchant, PayData $payData,  Gui $gui = null,  Customer $customer = null, $description = '') {
+        public function __construct(Merchant $merchant, PayData $payData,  Gui $gui = null,  Customer $customer = null, $description = '', $expirationTime = '') {
             $this->merchant = $merchant;
             $this->payData = $payData;
             $this->gui = $gui?:new Gui();
             $this->customer = $customer?:new Customer();
             $this->purchaseId = null;
             $this->description = $description;
+            $this->expirationTime = $expirationTime;
         }
         
         public static function create($data) {
@@ -49,6 +53,10 @@ namespace PaysonEmbedded {
             if(isset($data->description)) {
                 $checkout->description = $data->description;
             }
+            
+            if(isset($data->expirationTime)) {
+                $checkout->expirationTime = $data->expirationTime;
+            }
             return $checkout;
         }
       
@@ -57,10 +65,11 @@ namespace PaysonEmbedded {
                 'id' => $this->id,
                 'description' => $this->description,
                 'status' => $this->status,
+                'expirationTime' => $this->expirationTime,
                 'merchant' => $this->merchant->toArray(),
                 'order' => $this->payData->toArray(),
                 'gui' => $this->gui->toArray(),
-                'customer' => $this->customer->toArray()
+                'customer' => $this->customer->toArray(),
             );
         }
     }
