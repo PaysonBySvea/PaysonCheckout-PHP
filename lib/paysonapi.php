@@ -14,7 +14,7 @@ namespace PaysonEmbedded {
 namespace PaysonEmbedded {
 
     class PaysonApi {
-        /**  API version 1.0.1 */
+        /**  API version 1.0.2 */
         
         private $merchantId;
         private $apiKey;
@@ -108,6 +108,7 @@ namespace PaysonEmbedded {
             $header_size = curl_getinfo($ch, CURLINFO_HEADER_SIZE);
             $body = substr($result, $header_size);
             $response_code = curl_getinfo($ch, CURLINFO_HTTP_CODE);
+            $curl_error = curl_error($ch);
             curl_close($ch);
             
             /* This class of status codes indicates the action requested by the client was received, understood, accepted and processed successfully
@@ -124,7 +125,7 @@ namespace PaysonEmbedded {
                 }
                 return $result;
             } elseif ($result == false) {
-                throw new PaysonApiException('Curl error: '.curl_error($ch));
+                throw new PaysonApiException('Curl error: '.$curl_error);
             } else {
                 $errors = array();
                 
@@ -150,7 +151,7 @@ namespace PaysonEmbedded {
 
         private function extractCheckoutId($result) {
             $checkoutId = null;
-            if (preg_match('#Location: (.*)#', $result, $res)) {
+            if (preg_match('#Location: (.*)#i', $result, $res)) {
                 $checkoutId = trim($res[1]);
             }
             $checkoutId = explode('/', $checkoutId);

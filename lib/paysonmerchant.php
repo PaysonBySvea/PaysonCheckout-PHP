@@ -18,13 +18,13 @@ namespace PaysonEmbedded {
         /** @var string $integrationInfo Information about the integration. */
         public $integrationInfo = NULL;
 
-        public function __construct($checkoutUri, $confirmationUri, $notificationUri, $termsUri, $partnerId = NULL, $integrationInfo = 'PaysonCheckout2.0|1.0.1|NONE') {
+        public function __construct($checkoutUri, $confirmationUri, $notificationUri, $termsUri, $partnerId = NULL, $integrationInfo = 'NONE') {
             $this->checkoutUri = $checkoutUri;
             $this->confirmationUri = $confirmationUri;
             $this->notificationUri = $notificationUri;
             $this->termsUri = $termsUri;
             $this->partnerId = $partnerId;
-            $this->integrationInfo = $integrationInfo;
+            $this->integrationInfo = 'CO2PHPSDK_1.0.2|' . $integrationInfo;
         }
         
         public static function create($data) {
