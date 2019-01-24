@@ -24,7 +24,7 @@ namespace PaysonEmbedded {
             $this->notificationUri = $notificationUri;
             $this->termsUri = $termsUri;
             $this->partnerId = $partnerId;
-            $this->integrationInfo = 'CO2PHPSDK_1.0.2|' . $integrationInfo;
+            $this->integrationInfo = 'CO2_PHP|1.0.3|' . $integrationInfo;
         }
         
         public static function create($data) {
