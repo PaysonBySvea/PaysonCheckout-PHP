@@ -14,7 +14,7 @@ namespace PaysonEmbedded{
         /** @var bool $phoneOptional  Can be used to ask the user to fill in his phone number, but not strict required. */
         public $phoneOptional;
         
-        public function __construct($locale = "sv", $colorScheme = "gray", $verification = 0, $requestPhone = NULL, $countries = NULL, $phoneOptional = NULL){
+        public function __construct($locale = "sv", $colorScheme = "gray", $verification = 0, $requestPhone = null, $countries = null, $phoneOptional = null){
             $this->colorScheme = $colorScheme;
             $this->locale = $locale; 
             $this->verification = $verification;

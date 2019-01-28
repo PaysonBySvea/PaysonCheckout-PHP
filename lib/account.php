@@ -12,7 +12,6 @@ namespace PaysonEmbedded{
         /** @var string $enabledForPaymentPlan */
         public $enabledForPaymentPlan;
         
-
         public function __construct($accountEmail, $status,  $merchantId,  $enabledForInvoice, $enabledForpaymentPlan){
             $this->accountEmail = $accountEmail;
             $this->status = $status;

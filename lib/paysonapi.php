@@ -1,5 +1,4 @@
 <?php
-
 namespace PaysonEmbedded {
     require_once "paysonapiexception.php";
     require_once "paysonapierror.php";
@@ -174,8 +173,5 @@ namespace PaysonEmbedded {
         private function getUrl($action) {
             return (sprintf($this->protocol, ($this->useTestEnvironment ? 'test-' : '')) . self::PAYSON_HOST.$action);
         }
-
-
     }
-
 }

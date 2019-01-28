@@ -3,31 +3,22 @@ namespace PaysonEmbedded {
     class Checkout {
         /** @var Merchant $merchant */
         public $merchant;
-        
         /** @var PayData $order */
         public $payData;
-        
         /** @var Gui $gui */
         public $gui;
-        
         /** @var Customer $customer */
         public $customer;
-       
        /** @var string $status */
-        public $status;
-        
+        public $status; 
         /** @var string $id */
         public $id;
-        
         /** @var int $purchaseId */
         public $purchaseId;
-        
         /** @var string $snippet */
         public $snippet;
-        
         /** @var string $description */
         public $description;
-        
         /** @var string $expirationTime */
         public $expirationTime;
        
