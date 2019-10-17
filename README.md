@@ -1,8 +1,6 @@
-# Payson Checkout 2.0 PHP library
+### Payson Checkout PHP library
 
-Payson Checkout 2.0 API client for PHP.
+Payson Checkout API client for PHP.
 
+For all new integrations we recommend using [**PaysonPayments-PHP**](https://github.com/PaysonAktiebolag/PaysonPayments-PHP)
 
-## Contributing
-
-Issue pull requests or send feature requests.
