@@ -16,6 +16,12 @@ ini_set("display_errors", 1);
  */
 require_once '../lib/paysonapi.php';
 
+// Get protocol for URLs
+$protocol = 'http://';
+if (isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] == 'on') {
+    $protocol = 'https://';
+}
+
 /*
  * Account information. Below is all the variables needed to perform a purchase with
  * payson. Replace the placeholders with your actual information 
@@ -36,9 +42,9 @@ if ($environment == false) {
 }
 
 // URLs used by payson for redirection after a completed/canceled/notification purchase.
-$checkoutUri     = "http://my.local/phpAPI/example/checkout.php";
-$confirmationUri = "http://my.local/phpAPI/example/confirmation.php";
-$notificationUri = "http://my.local/phpAPI/example/notification.php";
-$termsUri        = "http://my.local/phpAPI/example/terms.php";
+$checkoutUri     = $protocol. $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI'];
+$confirmationUri = $protocol. $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI']. "confirmation.php";
+$notificationUri = $protocol. $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI']. "/notification.php";
+$termsUri        = $protocol. $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI']. "/terms.php";
 
 ?>
